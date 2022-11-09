@@ -1,3 +1,110 @@
 .App {
   text-align: center;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* partie pour le titre */
+header {
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+header h1 {
+  color: rgb(169, 140, 103);
+  font-size: 36px;
+  font-weight: 400;
+
+}
+
+header h1 strong {
+  color: rgb(102, 48, 48);
+}
+
+/* partie pour la recherche d'anime + top anime */
+.content-wrap {
+  display: flex;
+}
+
+/* partie top anime */
+.content-wrap aside {
+  flex: 1 1 250px;
+  max-width: 250px;
+  padding-right: 16px;
+}
+
+.content-wrap aside h3 {
+  color: #313131;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.content-wrap a {
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 16px;
+
+  background-color: #EEE;
+  border-radius: 999px;
+  text-decoration: none;
+
+  transition: 0.4s;
+}
+
+.content-wrap a:hover {
+  background-color: #313131;
+  color: #AAA;
+}
+
+/* partie recherche anime */
+body {
+  flex: 1 1 0%;
+  padding: 0px 16px;
+}
+
+body .main-head {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+body .main-head .search-box {
+  /* display: flex; */
+  justify-content: flex-end;
+  flex: 1 1 0%;
+}
+
+body .main-head .search-box input {
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  border-radius: 999px;
+  background-color: #EEE;
+
+  transition: 0.4s;
+}
+
+body .main-head .search-box input ::placeholder {
+  color: #888;
+}
+
+body .main-head .search-box input :focus :valid {
+  background-color: #313131;
+  color: #FFF;
+}
