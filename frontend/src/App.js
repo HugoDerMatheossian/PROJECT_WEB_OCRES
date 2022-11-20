@@ -1,22 +1,52 @@
+import React, { useEffect, useState } from "react";
 import './App.css';
-import { useState, useEffect } from 'react'
-import Header from './components/Header.js';
-import SideBar from './components/SideBar';
-import MainContent from './components/MainContent';
+import WidgetAnimeSearch from "./components/WidgetAnimeSearch";
+import AnimeList from "./components/AnimeList";
+import AnimeInfo from "./components/AnimeInfo";
+
 
 function App() {
-  const [animeList, setAnimeList] = useState([]);
-  const [topAnime, setTopAnime] = useState([]);
-  const [search, setSearch] = useState("");
+
+  const [search, setSearch] = useState('Naruto');
+  const [animeData, setAnimeData] = useState();
+  const [animeInfo, setAnimeInfo] = useState()
+
+  const getData = async () => {
+    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20&score=0&sfw`)
+    const resData = await res.json();
+    setAnimeData(resData.data)
+  }
+  useEffect(() => {
+    getData()
+  }, [search])
 
   return (
     <div className="App">
-      <Header />
-      <div className="content-wrap">
-        <SideBar topAnime={topAnime} />
-        <MainContent />
+      <header>
+        <h1>The<strong>Anime</strong>Nest</h1>
+        <div className="search-box">
+          <input type="search" placeholder="Search your anime"
+            onChange={(e) => setSearch(e.target.value)} />
+        </div>
+      </header>
+
+      <div className="container">
+        <div className="animeInfo">
+          {animeInfo && <AnimeInfo animeInfo={animeInfo} />}
+        </div>
+        <div className="anime-row">
+          <h2 className="text-heading">Anime</h2>
+          <div className="row">
+            <AnimeList
+              animelist={animeData}
+              setAnimeInfo={setAnimeInfo}
+            />
+          </div>
+        </div>
       </div>
+      {/* <WidgetAnimeSearch />  */}
     </div>
   );
 }
+
 export default App;
