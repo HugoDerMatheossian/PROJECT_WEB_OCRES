@@ -2,50 +2,79 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import AnimeList from "./components/AnimeList";
 import AnimeInfo from "./components/AnimeInfo";
+import CharacterList from "./components/CharacterList";
+import CharacterInfo from "./components/CharacterInfo";
 
 
 function App() {
 
   const [search, setSearch] = useState('');
   const [animeData, setAnimeData] = useState();
-  const [animeInfo, setAnimeInfo] = useState()
+  const [animeInfo, setAnimeInfo] = useState();
+
+  const [searchCharacter, setSearchCharacter] = useState('');
+  const [characterData, setCharacterData] = useState();
+  const [characterInfo, setCharacterInfo] = useState();
 
   const getData = async () => {
     const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20&score=0&sfw`)
+    const resCharacter = await fetch(`https://api.jikan.moe/v4/characters?q=${searchCharacter}&limit=20&sfw/full`)
+
     const resData = await res.json();
+    const resDataCharacter = await resCharacter.json();
+
     setAnimeData(resData.data)
+    setCharacterData(resDataCharacter.data)
   }
   useEffect(() => {
     getData()
-  }, [search])
+  }, [search, searchCharacter])
 
   return (
     <div className="App">
       <header>
         <h1>The<strong>Anime</strong>Nest</h1>
-        <div className="search-box">
-          <input type="search" placeholder="Search your anime"
-            onChange={(e) => setSearch(e.target.value)} />
-        </div>
       </header>
-
-      <div className="container">
-        <div className="animeInfo">
-          {animeInfo && <AnimeInfo animeInfo={animeInfo} />}
-        </div>
-        <div className="anime-body">
-          <div className="anime-header">
-            <h1>Find your Anime</h1>
+      <div className="first-row">
+        <div className="container">
+          <div className="animeInfo">
+            {animeInfo && <AnimeInfo animeInfo={animeInfo} />}
           </div>
-          <div className="row">
-            <AnimeList
-              animelist={animeData}
-              setAnimeInfo={setAnimeInfo}
-            />
+          <div className="anime-body">
+            <div className="anime-header">
+              <u><h1>Find an Anime</h1></u>
+              <input type="search" placeholder="Search your anime"
+                onChange={(e) => setSearch(e.target.value)} />
+            </div>
+            <div className="row">
+              <AnimeList
+                animelist={animeData}
+                setAnimeInfo={setAnimeInfo}
+              />
+            </div>
           </div>
         </div>
 
+        <div className="container2">
+          <div className="characterInfo">
+            {characterInfo && <CharacterInfo characterInfo={characterInfo} />}
+          </div>
+          <div className="character-body">
+            <div className="character-header">
+              <u><h1>Find a Character</h1></u>
+              <input type="search" placeholder="Search your character"
+                onChange={(e) => setSearchCharacter(e.target.value)} />
+            </div>
+            <div className="row">
+              <CharacterList
+                characterlist={characterData}
+                setCharacterInfo={setCharacterInfo}
+              />
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   );
 }
