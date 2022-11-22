@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import WidgetAnimeSearch from "./components/WidgetAnimeSearch";
 import AnimeList from "./components/AnimeList";
 import AnimeInfo from "./components/AnimeInfo";
 
@@ -34,17 +33,13 @@ function App() {
         <div className="animeInfo">
           {animeInfo && <AnimeInfo animeInfo={animeInfo} />}
         </div>
-        <div className="anime-row">
-          <h2 className="text-heading">Anime</h2>
-          <div className="row">
-            <AnimeList
-              animelist={animeData}
-              setAnimeInfo={setAnimeInfo}
-            />
-          </div>
+        <div className="row">
+          <AnimeList
+            animelist={animeData}
+            setAnimeInfo={setAnimeInfo}
+          />
         </div>
       </div>
-      {/* <WidgetAnimeSearch />  */}
     </div>
   );
 }
