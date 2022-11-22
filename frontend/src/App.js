@@ -33,12 +33,18 @@ function App() {
         <div className="animeInfo">
           {animeInfo && <AnimeInfo animeInfo={animeInfo} />}
         </div>
-        <div className="row">
-          <AnimeList
-            animelist={animeData}
-            setAnimeInfo={setAnimeInfo}
-          />
+        <div className="anime-body">
+          <div className="anime-header">
+            <h1>Find your Anime</h1>
+          </div>
+          <div className="row">
+            <AnimeList
+              animelist={animeData}
+              setAnimeInfo={setAnimeInfo}
+            />
+          </div>
         </div>
+
       </div>
     </div>
   );
