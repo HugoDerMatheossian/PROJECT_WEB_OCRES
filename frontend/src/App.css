@@ -136,9 +136,16 @@ header h1 strong {
 
 .characterInfo {
   width: 25%;
+  max-width: 25%;
+  min-width: 25%;
   max-height: 30rem;
   background-color: #b0ab9c;
   border-radius: 20px;
+
+}
+
+.character-kanji {
+  font-size: small;
 }
 
 .animeInfo img {
@@ -156,8 +163,13 @@ header h1 strong {
 
 .characterInfo .info-character {
   max-width: 100%;
-  font-size: medium;
+  font-size: small;
 }
+
+.character-nicknames {
+  font-size: smaller;
+}
+
 
 .characterInfo .info-character .character-about {
   border-radius: 20px;
@@ -166,7 +178,7 @@ header h1 strong {
   display: flex;
   overflow-y: scroll;
   scrollbar-width: thin;
-  position: relative;
+  max-height: relative;
 }
 
 .row {
