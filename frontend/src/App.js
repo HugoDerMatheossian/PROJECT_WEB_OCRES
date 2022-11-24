@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>The<strong>Anime</strong>Nest</h1>
+        <img src="png-transparent-red-cloud-illustration-china-papercutting-chinese-new-year-red-chinese-style-clouds-decoupage-other-text-cloud_1_-removebg-preview.png" alt="cloud1" /><h1>The<strong>Anime</strong>Nest</h1><img src="png-transparent-red-cloud-illustration-china-papercutting-chinese-new-year-red-chinese-style-clouds-decoupage-other-text-cloud_1_-removebg-preview.png" alt="cloud2" />
       </header>
       <div className="first-row">
         <div className="container">
@@ -43,7 +43,7 @@ function App() {
           <div className="anime-body">
             <div className="anime-header">
               <u><h1>Find an Anime</h1></u>
-              <input type="search" placeholder="Search your anime"
+              <input type="search" placeholder="Search an anime"
                 onChange={(e) => setSearch(e.target.value)} />
             </div>
             <div className="row">
@@ -62,7 +62,7 @@ function App() {
           <div className="character-body">
             <div className="character-header">
               <u><h1>Find a Character</h1></u>
-              <input type="search" placeholder="Search your character"
+              <input type="search" placeholder="Search a character"
                 onChange={(e) => setSearchCharacter(e.target.value)} />
             </div>
             <div className="row">
@@ -73,6 +73,15 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="second-row">
+        <div className="container"></div>
+        <div className="container"></div>
+      </div>
+
+      <div className="third-row">
+        <div className="container"></div>
+        <div className="container"></div>
       </div>
 
     </div>
