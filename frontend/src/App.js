@@ -6,6 +6,7 @@ import CharacterList from "./components/CharacterList";
 import CharacterInfo from "./components/CharacterInfo";
 
 
+
 function App() {
 
   const [search, setSearch] = useState('');

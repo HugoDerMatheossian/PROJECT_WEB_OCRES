@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const CharacterInfo = (props) => {
     const { name, images: { jpg: { image_url } }/*, anime: { anime: { title } }*/, about, name_kanji, nicknames } = props.characterInfo;
 
