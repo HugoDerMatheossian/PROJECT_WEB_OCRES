@@ -29,7 +29,6 @@ header {
   justify-content: center;
   background-color: rgba(63, 0, 113, 1);
   top: 0;
-  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
@@ -268,4 +267,87 @@ header h1 strong {
   padding: 1rem;
   overflow: auto;
   font-size: 1rem;
+}
+
+.quotes {
+  font-family: 'Fira Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 85%;
+  max-height: 20rem;
+}
+
+.quote {
+  position: relative;
+}
+
+.quote h1 {
+  display: flex;
+  justify-content: space-evenly;
+  color: rgba(63, 0, 113, 1);
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+blockquote {
+  font-family: 'Fira Code', monospace;
+  max-width: 80%;
+  max-height: 13rem;
+  min-height: auto;
+  font-size: 1.5rem;
+  background-color: #b0ab9c;
+  margin-left: 10%;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.anime,
+.character {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #D81E5B;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  max-width: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.anime {
+  background-color: #D81E5B;
+  font-weight: 400;
+  transform: translate(0, 50%);
+}
+
+.character {
+  background-color: #A84FFF;
+  font-weight: 700;
+  transform: translate(-50%, 50%);
+  position: absolute;
+
+}
+
+.second-row .container button {
+
+  font-family: 'Fira Sans', sans-serif;
+  align-self: center;
+  appearance: none;
+  border: none;
+  background-color: rgb(95, 95, 95);
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  transition: 0.4s;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.second-row .container {
+  flex-direction: column;
 }

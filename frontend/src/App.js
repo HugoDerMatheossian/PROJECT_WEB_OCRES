@@ -4,7 +4,7 @@ import AnimeList from "./components/AnimeList";
 import AnimeInfo from "./components/AnimeInfo";
 import CharacterList from "./components/CharacterList";
 import CharacterInfo from "./components/CharacterInfo";
-
+import Quotes from "./components/Quotes";
 
 
 function App() {
@@ -17,9 +17,15 @@ function App() {
   const [characterData, setCharacterData] = useState();
   const [characterInfo, setCharacterInfo] = useState();
 
+  const [quote, setQuote] = useState({
+    anime: null,
+    character: null,
+    quote: null
+  });
+
   const getData = async () => {
-    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20&score=0&sfw`)
-    const resCharacter = await fetch(`https://api.jikan.moe/v4/characters?q=${searchCharacter}&limit=20&sfw/full`)
+    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=12&score=0&sfw`)
+    const resCharacter = await fetch(`https://api.jikan.moe/v4/characters?q=${searchCharacter}&limit=12&sfw/full`)
 
     const resData = await res.json();
     const resDataCharacter = await resCharacter.json();
@@ -27,9 +33,25 @@ function App() {
     setAnimeData(resData.data)
     setCharacterData(resDataCharacter.data)
   }
+
+  const FetchQuote = async () => {
+    return await fetch("https://animechan.vercel.app/api/random")
+      .then(response => response.json());
+  }
+
+  const generate = async () => {
+    setQuote(await FetchQuote());
+  }
+
+
+
   useEffect(() => {
     getData()
   }, [search, searchCharacter])
+
+  // useEffect(async () => {
+  //   setQuote(await FetchQuote());
+  // }, []);
 
   return (
     <div className="App">
@@ -76,13 +98,16 @@ function App() {
         </div>
       </div>
       <div className="second-row">
-        <div className="container"></div>
-        <div className="container"></div>
+        <div className="container">
+          <Quotes quote={quote} />
+          <button onClick={generate}>Generate new quote</button>
+        </div>
+        <div className="container2"></div>
       </div>
 
       <div className="third-row">
         <div className="container"></div>
-        <div className="container"></div>
+        <div className="container2"></div>
       </div>
 
     </div>
