@@ -6,7 +6,6 @@ import CharacterList from "./components/CharacterList";
 import CharacterInfo from "./components/CharacterInfo";
 import Quotes from "./components/Quotes";
 
-
 function App() {
 
   const [search, setSearch] = useState('');
@@ -42,8 +41,6 @@ function App() {
   const generate = async () => {
     setQuote(await FetchQuote());
   }
-
-
 
   useEffect(() => {
     getData()
