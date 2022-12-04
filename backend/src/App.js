@@ -1,72 +1,28 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React from 'react';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import AddWebsite from './pages/AddWebsite';
+import AllWebsite from './pages/AllWebsite';
+import Home from './pages/Home';
+import Header from './components/Header';
 
-class App extends Component {
-
-  constructor(){
-    super()
-    this.state = {
-      fullName:'',
-      username:'',
-      email:''
-    }
-    this.changeFullName = this.changeFullName.bind(this)
-    this.changeUsername = this.changeUsername.bind(this)
-    this.changeEmail = this.changeEmail.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-  }
-
-  changeFullName(event){
-    this.setState({
-      fullName:event.target.value
-    })
-  }
-  changeUsername(event){
-    this.setState({
-      username:event.target.value
-    })
-  }
-  changeEmail(event){
-    this.setState({
-      email:event.target.value
-    })
-  }
-
-  onSubmit(event){
-    event.preventDefault()
-
-    const registered = {
-      fullName: this.state.fullName,
-      username: this.state.username,
-      email: this.state.username
-    }
-
-    axios.post('http://localhost:4000/api/Add', registered)
-      .then(response => console.log(response.data))
-
-    this.setState({
-      fullName:'',
-      username:'',
-      email:''
-    })
-  }
-    
-  render(){
-    return(
-      <div>
-        <div className="container">
-          <div className="form-div">
-            <form onSubmit={this.onSubmit}>
-              <input type="text" placeholder='Full Name' onChange={this.changeFullName} value={this.state.fullName}/>
-              <input type="text" placeholder='Username' onChange={this.changeUsername} value={this.state.username}/>
-              <input type="text" placeholder='Email' onChange={this.changeEmail} value={this.state.email}/>
-              <input type="submit" value='Submit'/>
-            </form>
-          </div>
-        </div>
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Header/>
+        <ToastContainer position="top-center"/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/AllWebsite" component={AllWebsite}/>
+          <Route path="/UpdateWebsite/:id" component={AddWebsite}/>
+          <Route path="/AddWebsite" component={AddWebsite}/>
+        </Switch>
       </div>
-    )
-  }
+    </BrowserRouter>
+  );
 }
 
 export default App;
