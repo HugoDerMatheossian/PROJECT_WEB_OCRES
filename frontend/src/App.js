@@ -5,6 +5,18 @@ import AnimeInfo from "./components/AnimeInfo";
 import CharacterList from "./components/CharacterList";
 import CharacterInfo from "./components/CharacterInfo";
 import Quotes from "./components/Quotes";
+import express from "express";
+
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 function App() {
 
