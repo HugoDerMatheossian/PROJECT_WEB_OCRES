@@ -5,6 +5,8 @@ import AnimeInfo from "./components/AnimeInfo";
 import CharacterList from "./components/CharacterList";
 import CharacterInfo from "./components/CharacterInfo";
 import Quotes from "./components/Quotes";
+import Animechart from "./components/Animechart";
+import WidgetWebsites from "./components/WidgetWebsites";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
     quote: null
   });
 
+  const [animeTopData, setAnimeTopData] = useState('');
+
   const getData = async () => {
     const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=12&score=0&sfw`)
     const resCharacter = await fetch(`https://api.jikan.moe/v4/characters?q=${searchCharacter}&limit=12&sfw/full`)
@@ -31,6 +35,13 @@ function App() {
 
     setAnimeData(resData.data)
     setCharacterData(resDataCharacter.data)
+  }
+
+  const fetchTop = async () => {
+    const resTop = await fetch(`https://api.jikan.moe/v4/top/anime?limit=6`);
+    const resDataTop = await resTop.json();
+
+    setAnimeTopData(resDataTop.data)
   }
 
   const FetchQuote = async () => {
@@ -44,11 +55,8 @@ function App() {
 
   useEffect(() => {
     getData()
+    fetchTop()
   }, [search, searchCharacter])
-
-  // useEffect(async () => {
-  //   setQuote(await FetchQuote());
-  // }, []);
 
   return (
     <div className="App">
@@ -99,11 +107,15 @@ function App() {
           <Quotes quote={quote} />
           <button onClick={generate}>Generate new quote</button>
         </div>
-        <div className="container2"></div>
+        <div className="container2">
+          <Animechart
+            topList={animeTopData}
+          />
+        </div>
       </div>
 
       <div className="third-row">
-        <div className="container"></div>
+        <div className="container"><WidgetWebsites /></div>
         <div className="container2"></div>
       </div>
 

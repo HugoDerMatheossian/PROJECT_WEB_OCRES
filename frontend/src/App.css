@@ -311,7 +311,7 @@ blockquote {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 1px;
-  max-width: fit-content;
+  max-width: viewport-length;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -347,4 +347,46 @@ blockquote {
 
 .second-row .container {
   flex-direction: column;
+}
+
+.chart {
+  align-self: center;
+  width: 45rem;
+  height: 100%;
+  border: 4px;
+  border-radius: 5px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.chart .header {
+  color: rgba(63, 0, 113, 1);
+}
+
+.graph {
+  align-self: center;
+  width: 90%;
+  height: 90%;
+  max-height: 22rem;
+  background-color: #b0ab9c;
+  border: solid rgb(136, 135, 135) 4px;
+  border-radius: 5px;
+  margin: auto;
+
+}
+
+.widgetWebsite {
+  align-self: center;
+  width: 90%;
+  height: 90%;
+  max-height: 22rem;
+  background-color: #b0ab9c;
+  border: solid rgb(136, 135, 135) 4px;
+  border-radius: 5px;
+  margin: auto;
+
+}
+
+.widgetWebsite .header {
+  color: rgba(63, 0, 113, 1);
 }
