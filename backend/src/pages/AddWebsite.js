@@ -4,6 +4,7 @@ import "./AddWebsite.css";
 import axios from "axios";
 import { toast } from 'react-toastify';
 
+// CONSTANTE D'INITIALISATION AU MODEL D'UN WEBSITE
 const initialState = {
   websiteName:"",
   score:"",
@@ -17,8 +18,6 @@ const AddWebsite = () => {
 
   const history = useHistory();
 
-
-  
   const {id} = useParams();
 
   useEffect(() => {
@@ -35,8 +34,6 @@ const AddWebsite = () => {
       }
   };
 
-
-
   // THIS IS THE REQUEST TO INSERT A NEW WEBSITE_DATAS INTHE DATABASE  
   const addNewWebsite = async (data) => {
     const response = await axios.post("http://localhost:4000/api/websites/Add", data);
@@ -44,8 +41,6 @@ const AddWebsite = () => {
       toast.success("The Website has been add successfully");
     }
   }
-
-
 
   // THIS IS THE REQUEST TO UPDATE ONE WEBSITE BY THE 'ID'
   const updateWebsite = async (data, id) => {
@@ -55,7 +50,7 @@ const AddWebsite = () => {
     }
   }
 
-
+  // FONCTION : WHEN THE BUTTON ADD/UPDATE IS SELECTED
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!id){
@@ -66,6 +61,7 @@ const AddWebsite = () => {
     setTimeout(() => history.push("/AllWebsite"), 500);
   };
 
+  // FONCTION : WHEN THE INPUT VALUE CHANGE
   const handleInputChange = (e) => {
     let {name} = e.target;
     setState({ ...state, [name]:e.target.value});
