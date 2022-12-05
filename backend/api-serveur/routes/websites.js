@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //const WebsiteController = require("../controllers/websites.js");
+
 const WebsiteModel = require('../models/website')
 
 router.post('/Add', async (request, response) => {
@@ -69,22 +70,5 @@ router.delete('/delete/:id', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 })
-
-
-// //Post Method
-// router.post('/post', WebsiteController.addMovie)
-
-// //Get all Method
-// router.get('/getAll', WebsiteController.findAll)
-
-// //Get by ID Method
-// router.get('/getOne/:id', WebsiteController.findOne)
-
-// //Update by ID Method
-// router.patch('/update/:id', WebsiteController.deleteOne)
-
-// //Delete by ID Method
-// router.delete('/delete/:id', WebsiteController.modifyFilm)
-
 
 module.exports = router

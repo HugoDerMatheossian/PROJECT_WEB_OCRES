@@ -20,7 +20,9 @@ const AllWebsite = () => {
 
   const onDeleteWebsite = async (id) => {
     if(window.confirm("Are you sure that you want to delete that website ?")) {
-      const response = await axios.delete(`http://localhost:4000/api/websites/delete/:${id}`);
+      toast.error("TEST");
+      toast.error(id);
+      const response = await axios.delete(`http://localhost:4000/api/websites/delete/${id}`);
       if(response.status === 200) {
         toast.success("Website Deleted Successfully !");
         getWebsites();

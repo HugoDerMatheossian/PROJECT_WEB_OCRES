@@ -29,7 +29,7 @@ const AddWebsite = () => {
 
   // THIS IS THE REQUEST TO FIND ONE WEBSITE BY THE 'ID'
   const getSingleWebsite = async (id) => {
-    const response = await axios.get(`http://localhost:4000/api/websites/getOne/${id}`);
+    const response = await axios.get(`http://localhost:4000/api/websites/getOne/${id.toString()}`);
       if(response.status === 200) {
         setState({...response.data[0] });
       }
