@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-//const WebsiteController = require("../controllers/websites.js");
-
 const VideoModel = require('../models/video')
 
 router.post('/Add', async (request, response) => {
     const data = new VideoModel({
-        websiteName:request.body.websiteName,
-        score:request.body.score,
-        nbVisites:request.body.nbVisites
+        AnimeName:request.body.AnimeName,
+        url:request.body.url,
+        VideoName:request.body.VideoName
     })
     try {
         const dataToSave = await data.save();
