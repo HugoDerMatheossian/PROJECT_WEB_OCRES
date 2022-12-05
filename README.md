@@ -20,3 +20,6 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
+## Lien vers Trello
+
+https://trello.com/b/Fo19Mn9O/todo-list
