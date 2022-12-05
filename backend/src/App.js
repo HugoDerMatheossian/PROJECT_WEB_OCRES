@@ -4,7 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AddWebsite from './pages/AddWebsite';
-import AllWebsite from './pages/AllWebsite';
+//import AllWebsite from './pages/AllWebsite';
+import WebsitesAdminPage from './pages/WebsitesAdminPage';
 import Home from './pages/Home';
 import Header from './components/Header';
 
@@ -16,7 +17,7 @@ function App() {
         <ToastContainer position="top-center"/>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/AllWebsite" component={AllWebsite}/>
+          <Route path="/AllWebsite" component={WebsitesAdminPage}/>
           <Route path="/UpdateWebsite/:id" component={AddWebsite}/>
           <Route path="/AddWebsite" component={AddWebsite}/>
         </Switch>

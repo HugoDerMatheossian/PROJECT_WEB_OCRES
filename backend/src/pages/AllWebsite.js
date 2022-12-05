@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
 import "./AllWebsite.css";
 import axios from "axios"
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';   // LIBRARY TO CREATE MESSAGE POP-UP
+
+
 
 const AllWebsite = () => {
   const [data, setData] = useState([]);
@@ -11,6 +13,7 @@ const AllWebsite = () => {
     getWebsites();
   }, [])
 
+  // THIS IS THE REQUEST TO FIND ALL THE WEBSITES
   const getWebsites = async() => {
     const response = await axios.get("http://localhost:4000/api/websites/getAll");
     if(response.status === 200) {
@@ -18,10 +21,9 @@ const AllWebsite = () => {
     }
   };
 
+  // THIS IS THE REQUEST TO DELETE ONE WEBSITE BY THE 'ID'
   const onDeleteWebsite = async (id) => {
     if(window.confirm("Are you sure that you want to delete that website ?")) {
-      toast.error("TEST");
-      toast.error(id);
       const response = await axios.delete(`http://localhost:4000/api/websites/delete/${id}`);
       if(response.status === 200) {
         toast.success("Website Deleted Successfully !");
@@ -34,6 +36,7 @@ const AllWebsite = () => {
     }
   }
 
+  // DISPLAY DATA IN CONSOLE
   console.log("data=>", data);
 
   return (
@@ -57,10 +60,10 @@ const AllWebsite = () => {
                 <td>{item.score}</td>
                 <td>{item.nbVisites}</td>
                 <td>
-                  <Link to={`/UpdateWebsite/${item.id}`}>
-                    <button className="btn btn-edit">Edit</button>
+                  <Link to={`/UpdateWebsite/${item._id}`}>
+                    <button className="btn btn-edit">Modify</button>
                   </Link>
-                  <button className='btn btn-delete' onClick={() => onDeleteWebsite(item.id)}>Delete</button>
+                  <button className='btn btn-delete' onClick={() => onDeleteWebsite(item._id)}>Delete</button>
                 </td>
               </tr>
             )

@@ -61,14 +61,17 @@ router.patch('/update/:id', async (req, res) => {
 
 //Delete by ID Method
 router.delete('/delete/:id', async (req, res) => {
-    try {
-        const id = req.params.id;
-        const data = await WebsiteModel.findByIdAndDelete(id)
-        res.send(`Document with ${data.name} has been deleted..`)
-    }
-    catch (error) {
-        res.status(400).json({ message: error.message })
-    }
+    const id = req.params.id;
+    WebsiteModel.deleteOne({ _id: id }).then((movie) => {
+        res.status(200).json({ 
+            movie,
+            message: `${movie} deleted !` 
+        });
+    }).catch(() => {
+        res.status(404).json({ 
+            message: `Movie not found !` 
+        });
+    })
 })
 
 module.exports = router
