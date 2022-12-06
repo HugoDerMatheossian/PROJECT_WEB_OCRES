@@ -89,6 +89,7 @@ const WebsitesAdminPage = () => {
     );
     if (response.status === 200) {
       //toast.success("The Website has been add successfully");
+      getWebsites();
     }
   };
 

@@ -89,6 +89,7 @@ const VideosAdminPage = () => {
     );
     if (response.status === 200) {
       //toast.success("The Video has been add successfully");
+      getVideos();
     }
   };
 
