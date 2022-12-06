@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";   // LIBRARY TO TRANSFER DATA BETWEEN PAGES
+import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
 //import { toast } from 'react-toastify';   // LIBRARY TO CREATE MESSAGE POP-UP
 import "./WebsitesAdminPage.css";
-import "./Pages.css";
 import axios from "axios";
 
 const initialState = {
@@ -105,7 +105,7 @@ const WebsitesAdminPage = () => {
 
   return (
     <div className="InfosGeneral">
-      <div className="ListVideo_Container">
+      <div className="ListWebsite_Container">
         <table className="styled-table">
           <thead>
             <tr>
@@ -126,6 +126,9 @@ const WebsitesAdminPage = () => {
                     <td>{item.score}</td>
                     <td>{item.nbVisites}</td>
                     <td>
+                      <Link to={`/UpdateWebsite/${item._id}`}>
+                        <button className="btn btn-edit">Modify</button>
+                      </Link>
                       <button
                         className="btn btn-delete"
                         onClick={() => onDeleteWebsite(item._id)}
@@ -139,7 +142,7 @@ const WebsitesAdminPage = () => {
           </tbody>
         </table>
       </div>
-      <div className="InfoVideo_Container" style={{ marginTop: "100px" }}>
+      <div className="InfoWebsite_Container" style={{ marginTop: "100px" }}>
         <form
           style={{
             margin: "auto",

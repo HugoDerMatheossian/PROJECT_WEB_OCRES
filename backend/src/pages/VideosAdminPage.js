@@ -122,7 +122,7 @@ const VideosAdminPage = () => {
                 return (
                   <tr key={index}>
                     <td>{item.NameAnime}</td>
-                    <td>{item.URL}</td>
+                    <td><a href={item.URL} target={item.URL}>{item.URL}</a></td>
                     <td>{item.Titre_video}</td>
                     <td>
                       <Link to={`/UpdateWebsite/${item._id}`}>
@@ -141,7 +141,7 @@ const VideosAdminPage = () => {
           </tbody>
         </table>
       </div>
-      <div className="InfoVideo_Container" style={{ marginTop: "100px" }}>
+      <div className="InfoVideo_Container">
         <form
           style={{
             margin: "auto",
