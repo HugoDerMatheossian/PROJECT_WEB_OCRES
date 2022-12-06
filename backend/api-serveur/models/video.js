@@ -1,18 +1,18 @@
 const mongoose = require('mongoose')
 
 const VideoSchema = new mongoose.Schema({
-    AnimeName:{
+    NameAnime:{
         type:String, 
         require:true
     },
-    url:{
+    URL:{
         type:String,
         require:true
     },
-    VideoName:{
+    Titre_video:{
         type:String,
         require:true
     }
 })
 
-module.exports = mongoose.model('playlist_op-ed', VideoSchema)
+module.exports = mongoose.model('playlist_op-eds', VideoSchema)

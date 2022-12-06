@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom"; // LIBRARY TO TRANSFER DATA BETWEEN PAGES
-//import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
-import { toast } from "react-toastify"; // LIBRARY TO CREATE MESSAGE POP-UP
-import "./AddWebsite.css";
-import "./AllWebsite.css";
+import { useParams } from "react-router-dom";   // LIBRARY TO TRANSFER DATA BETWEEN PAGES
+import { toast } from 'react-toastify';   // LIBRARY TO CREATE MESSAGE POP-UP
+import "./WebsitesAdminPage.css";
 import axios from "axios";
 
 const initialState = {
@@ -12,11 +10,9 @@ const initialState = {
   nbVisites: "",
 };
 
-const WebsitesPage = () => {
+const WebsitesAdminPage = () => {
   const [state, setState] = useState(initialState);
   const { websiteName, score, nbVisites } = initialState;
-
-  const history = useHistory();
 
   const { id } = useParams();
 
@@ -40,7 +36,7 @@ const WebsitesPage = () => {
     } else {
       updateWebsite(state, id);
     }
-    setTimeout(() => history.push("/AllWebsite"), 500);
+    getWebsites()
   };
 
   // FONCTION : WHEN THE INPUT VALUE CHANGE
@@ -129,7 +125,6 @@ const WebsitesPage = () => {
                     <td>{item.score}</td>
                     <td>{item.nbVisites}</td>
                     <td>
-                      <button className="btn btn-edit">Modify</button>
                       <button
                         className="btn btn-delete"
                         onClick={() => onDeleteWebsite(item._id)}
@@ -193,4 +188,4 @@ const WebsitesPage = () => {
   );
 };
 
-export default WebsitesPage;
+export default WebsitesAdminPage;

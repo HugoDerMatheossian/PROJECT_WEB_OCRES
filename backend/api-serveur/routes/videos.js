@@ -5,9 +5,9 @@ const VideoModel = require('../models/video')
 
 router.post('/Add', async (request, response) => {
     const data = new VideoModel({
-        AnimeName:request.body.AnimeName,
-        url:request.body.url,
-        VideoName:request.body.VideoName
+        NameAnime:request.body.AnimeName,
+        URL:request.body.url,
+        Titre_video:request.body.VideoName
     })
     try {
         const dataToSave = await data.save();

@@ -10,7 +10,7 @@ router.post('/Add', async (request, response) => {
         websiteName:request.body.websiteName,
         score:request.body.score,
         nbVisites:request.body.nbVisites
-    })
+    }) 
     try {
         const dataToSave = await data.save();
         response.status(200).json(dataToSave)

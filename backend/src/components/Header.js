@@ -3,18 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-    const [activeTab, setActiveTab] = useState("Home");
+    const [activeTab, setActiveTab] = useState("WebsitesAdminPage");
 
     const location = useLocation();
     useEffect(() => {
-        if(location.pathname === "/") {
-            setActiveTab("Home");
+        if(location.pathname === "/WebsitesAdminPage"){
+            setActiveTab("WebsitesAdminPage");
         }
-        else if(location.pathname === "/AllWebsite"){
-            setActiveTab("AllWebsite");
-        }
-        else if(location.pathname === "/AddWebsite"){
-            setActiveTab("AddWebsite");
+        else if(location.pathname === "/VideosAdminPage"){
+            setActiveTab("VideosAdminPage");
         }
     }, [location])
 
@@ -23,25 +20,18 @@ const Header = () => {
     <div className='header'>
         <p>Anime Management System</p>
         <div className="header-right">
-            <Link to="/">
-                <p className={`${activeTab === "Home" ? "active" : ""}`} 
-                onClick={() => setActiveTab("Home")}
+            <Link to="/WebsitesAdminPage">
+                <p className={`${activeTab === "WebsitesAdminPage" ? "active" : ""}`} 
+                onClick={() => setActiveTab("WebsitesAdminPage")}
                 >
-                    Home
+                    WEBSITE ADMIN PAGE
                 </p>
             </Link>
-            <Link to="/AllWebsite">
-                <p className={`${activeTab === "AllWebsite" ? "active" : ""}`} 
-                onClick={() => setActiveTab("AllWebsite")}
+            <Link to="/VideosAdminPage">
+                <p className={`${activeTab === "VideosAdminPage" ? "active" : ""}`}
+                onClick={() => setActiveTab("VideosAdminPage")}
                 >
-                    Liste Websites
-                </p>
-            </Link>
-            <Link to="/AddWebsite">
-                <p className={`${activeTab === "AddWebsite" ? "active" : ""}`}
-                onClick={() => setActiveTab("AddWebsite")}
-                >
-                    Add Website
+                    VIDEOS ADMIN PAGE
                 </p>
             </Link>
         </div>
