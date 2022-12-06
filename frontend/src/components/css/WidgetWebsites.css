@@ -46,7 +46,7 @@
     border-radius: 5px;
     margin: auto;
     max-width: 85%;
-    max-height: 90%;
+    max-height: 20rem;
     overflow-y: scroll;
     scrollbar-width: thin;
 }
