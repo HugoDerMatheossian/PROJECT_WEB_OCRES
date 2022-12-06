@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './css/anime.css';
 export const AnimeList = ({ animelist, setAnimeInfo }) => {
     return (
         <>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './css/anime.css';
 export const AnimeInfo = (props) => {
     const { title, images: { jpg: { large_image_url } }, source, rank, score, popularity, status, duration } = props.animeInfo;
     return (

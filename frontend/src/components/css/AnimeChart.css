@@ -1,0 +1,26 @@
+.chart {
+    align-self: center;
+    width: 45rem;
+    height: 100%;
+    border: 4px;
+    border-radius: 5px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.chart .header {
+    color: rgba(63, 0, 113, 1);
+    padding-bottom: 1%;
+}
+
+.graph {
+    align-self: center;
+    width: 90%;
+    height: 90%;
+    max-height: 22rem;
+    background-color: #b0ab9c;
+    border: solid rgb(136, 135, 135) 4px;
+    border-radius: 5px;
+    margin: auto;
+
+}

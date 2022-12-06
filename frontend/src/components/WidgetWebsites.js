@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./WidgetWebsites.css";
+import "./css/WidgetWebsites.css";
 import axios from "axios"
 
 export const WidgetWebsites = () => {
