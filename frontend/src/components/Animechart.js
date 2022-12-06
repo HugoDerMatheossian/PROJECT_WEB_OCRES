@@ -1,7 +1,7 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export const Animechart = (topList) => {
+export const Animechart = () => {
 
     const data = [
         {
@@ -48,28 +48,25 @@ export const Animechart = (topList) => {
     return (
         <>
             {
-                topList ? (
-
-                    <div className="chart">
-                        <div className="header">
-                            <u><h1>Top anime currently</h1></u>
-                        </div>
-                        <div className='graph'>
-                            <ResponsiveContainer width="100%" height="80%" >
-                                <BarChart width={150} height={40} data={data} margin={{ top: 35, right: 40, left: 5 }}>
-                                    <Bar dataKey="rank" fill="#A84FFF" />
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="score" fill="#8884d8" />
-                                    <Bar dataKey="popularity" fill="#82ca9d" />
-                                </BarChart>
-                            </ResponsiveContainer>
-                        </div>
+                <div className="chart">
+                    <div className="header">
+                        <u><h1>US adult popularity of anime(%)</h1></u>
                     </div>
-                ) : "Not Found "
+                    <div className='graph'>
+                        <ResponsiveContainer width="100%" height="80%" >
+                            <BarChart width={150} height={40} data={data} margin={{ top: 35, right: 40, left: 5 }}>
+                                <Bar dataKey="rank" fill="#A84FFF" />
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="score" fill="#8884d8" />
+                                <Bar dataKey="popularity" fill="#82ca9d" />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
             }
 
         </>

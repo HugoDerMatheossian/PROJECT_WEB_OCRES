@@ -7,6 +7,7 @@ import CharacterInfo from "./components/CharacterInfo";
 import Quotes from "./components/Quotes";
 import Animechart from "./components/Animechart";
 import WidgetWebsites from "./components/WidgetWebsites";
+import WidgetPlaylist from "./components/WidgetPlaylist";
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
     quote: null
   });
 
-  const [animeTopData, setAnimeTopData] = useState('');
+  // const [animeTopData, setAnimeTopData] = useState('');
 
   const getData = async () => {
     const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=12&score=0&sfw`)
@@ -37,12 +38,12 @@ function App() {
     setCharacterData(resDataCharacter.data)
   }
 
-  const fetchTop = async () => {
-    const resTop = await fetch(`https://api.jikan.moe/v4/top/anime?limit=6`);
-    const resDataTop = await resTop.json();
+  // const fetchTop = async () => {
+  //   const resTop = await fetch(`https://api.jikan.moe/v4/top/anime?limit=6`);
+  //   const resDataTop = await resTop.json();
 
-    setAnimeTopData(resDataTop.data)
-  }
+  //   setAnimeTopData(resDataTop.data)
+  // }
 
   const FetchQuote = async () => {
     return await fetch("https://animechan.vercel.app/api/random")
@@ -55,7 +56,7 @@ function App() {
 
   useEffect(() => {
     getData()
-    fetchTop()
+    // fetchTop()
   }, [search, searchCharacter])
 
   return (
@@ -109,14 +110,14 @@ function App() {
         </div>
         <div className="container2">
           <Animechart
-            topList={animeTopData}
+          // topList={animeTopData}
           />
         </div>
       </div>
 
       <div className="third-row">
         <div className="container"><WidgetWebsites /></div>
-        <div className="container2"></div>
+        <div className="container2"><WidgetPlaylist /></div>
       </div>
 
     </div>
