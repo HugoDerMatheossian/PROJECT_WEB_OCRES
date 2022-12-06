@@ -16,14 +16,15 @@ export default function Chart({ data }) {
                 data={data}
                 margin={{
                     top: 5,
-                    bottom: 39,
+                    bottom: 30,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="Titre" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Pourcentage" fill="#82ca9d" radius={[10, 10, 0, 0]} />
+                <Bar dataKey="Pourcentage" fill="#82ca9d" />
             </BarChart>
         </ResponsiveContainer>
     );

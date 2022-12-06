@@ -33,7 +33,7 @@ const VideosAdminPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!id) {
-        addNewVideo(state);
+      addNewVideo(state);
     } else {
       updateVideo(state, id);
     }
@@ -150,7 +150,7 @@ const VideosAdminPage = () => {
             alignContent: "center",
           }}
           onSubmit={handleSubmit}
-          >
+        >
           <label htmlFor="NameAnime">Anime Name</label>
           <input
             type="text"
