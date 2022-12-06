@@ -361,6 +361,7 @@ blockquote {
 
 .chart .header {
   color: rgba(63, 0, 113, 1);
+  padding-bottom: 1%;
 }
 
 .graph {
