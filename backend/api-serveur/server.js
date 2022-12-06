@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const websitesRoutes = require('./routes/websites.js');
 const videosRoutes = require('./routes/videos.js');
+const popularityRoutes = require('./routes/popularity.js');
 
 const cors = require('cors');
 const PORT = process.env.PORT || 4000;
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/api/websites', websitesRoutes);
 app.use('/api/videos', videosRoutes);
+app.use('/api/stats', popularityRoutes);
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
 
