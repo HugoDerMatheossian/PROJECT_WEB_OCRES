@@ -25,8 +25,6 @@ function App() {
     quote: null
   });
 
-  // const [animeTopData, setAnimeTopData] = useState('');
-
   const getData = async () => {
     const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=12&score=0&sfw`)
     const resCharacter = await fetch(`https://api.jikan.moe/v4/characters?q=${searchCharacter}&limit=12&sfw/full`)
@@ -37,13 +35,6 @@ function App() {
     setAnimeData(resData.data)
     setCharacterData(resDataCharacter.data)
   }
-
-  // const fetchTop = async () => {
-  //   const resTop = await fetch(`https://api.jikan.moe/v4/top/anime?limit=6`);
-  //   const resDataTop = await resTop.json();
-
-  //   setAnimeTopData(resDataTop.data)
-  // }
 
   const FetchQuote = async () => {
     return await fetch("https://animechan.vercel.app/api/random")
@@ -56,7 +47,6 @@ function App() {
 
   useEffect(() => {
     getData()
-    // fetchTop()
   }, [search, searchCharacter])
 
   return (
@@ -108,11 +98,7 @@ function App() {
           <Quotes quote={quote} />
           <button onClick={generate}>Generate new quote</button>
         </div>
-        <div className="container2">
-          <Animechart
-          // topList={animeTopData}
-          />
-        </div>
+        <div className="container2"><Animechart /></div>
       </div>
 
       <div className="third-row">

@@ -21,10 +21,9 @@ export default function Chart({ data }) {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="Titre" />
-                <YAxis dataKey="Pourcentage" />
+                <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Titre" fill="#8884d8" />
                 <Bar dataKey="Pourcentage" fill="#82ca9d" />
             </BarChart>
         </ResponsiveContainer>
