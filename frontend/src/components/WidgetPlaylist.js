@@ -39,7 +39,6 @@ export const WidgetPlaylist = () => {
                                     <tr>
                                         <th>TITLE</th>
                                         <th>URL</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +48,6 @@ export const WidgetPlaylist = () => {
                                                 <tr key={index}>
                                                     <td>{item.Titre_video}</td>
                                                     <td><a href={item.URL} target={item.URL}>{item.URL}</a></td>
-
                                                 </tr>
                                             );
                                         })}
