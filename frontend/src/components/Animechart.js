@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios"
 import Chart from "./Chart";
+import './css/AnimeChart.css';
 
 export const Animechart = () => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './css/character.css';
 const CharacterList = ({ characterlist, setCharacterInfo }) => {
     return (
         <>

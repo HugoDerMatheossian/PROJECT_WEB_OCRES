@@ -1,0 +1,72 @@
+.characterInfo {
+    width: 25%;
+    max-width: 25%;
+    min-width: 25%;
+    max-height: 30rem;
+    background-color: #b0ab9c;
+    border-radius: 20px;
+
+}
+
+.character-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-header {
+    display: flex;
+    color: rgba(63, 0, 113, 1);
+    width: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.character-header input {
+    background-color: rgb(168, 166, 166);
+    outline: none;
+    border: solid;
+    border-radius: 20px;
+    width: 40%;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+}
+
+
+.characterInfo .info-character {
+    max-width: 100%;
+    font-size: small;
+}
+
+.character-nicknames {
+    font-size: smaller;
+}
+
+
+.characterInfo .info-character .character-about {
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 7rem;
+    display: flex;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    max-height: relative;
+}
+
+.character-kanji {
+    font-size: small;
+}
+
+.characterInfo img {
+    height: 30%;
+}
+
+.character-content {
+    padding: 5%;
+}
+
+.character-content img {
+    width: 50%;
+}

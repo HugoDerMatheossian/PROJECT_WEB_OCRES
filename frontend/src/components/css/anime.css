@@ -1,0 +1,76 @@
+.anime-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.anime-header {
+    display: flex;
+    color: rgba(63, 0, 113, 1);
+    width: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.anime-header input {
+    background-color: rgb(168, 166, 166);
+    outline: none;
+    border: solid;
+    border-radius: 20px;
+    width: 45%;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+}
+
+.animeInfo {
+    width: 25%;
+    max-height: 30rem;
+    background-color: #b0ab9c;
+    border-radius: 20px;
+}
+
+.animeInfo img {
+    height: 30%;
+}
+
+.animeInfo .info {
+    max-width: 100%;
+    font-size: medium;
+}
+
+.anime-content {
+    padding: 5%;
+}
+
+.anime-content img {
+    width: 50%;
+}
+
+/* partie sur l'overlay des card animes */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    padding: 1rem;
+    background-color: rgba(212, 187, 163, 0.9);
+    border-radius: 5rem 4rem 0 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.anime-info:hover .overlay {
+    opacity: 1;
+    height: 90%;
+}
+
+.overlay .synopsis {
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: auto;
+    font-size: 1rem;
+}
