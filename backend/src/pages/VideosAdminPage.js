@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // LIBRARY TO TRANSFER DATA BETWEEN PAGES
-//import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
-import { toast } from "react-toastify"; // LIBRARY TO CREATE MESSAGE POP-UP
+import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
+//import { toast } from "react-toastify"; // LIBRARY TO CREATE MESSAGE POP-UP
 import axios from "axios";
 import "./VideosAdminPage.css";
 
@@ -63,10 +63,10 @@ const VideosAdminPage = () => {
         `http://localhost:4000/api/videos/delete/${id}`
       );
       if (response.status === 200) {
-        toast.success("Video Deleted Successfully !");
+        //toast.success("Video Deleted Successfully !");
         getVideos();
       } else {
-        toast.error("Impossible to delete the video !");
+        //toast.error("Impossible to delete the video !");
       }
     }
   };
@@ -88,7 +88,7 @@ const VideosAdminPage = () => {
       data
     );
     if (response.status === 200) {
-      toast.success("The Video has been add successfully");
+      //toast.success("The Video has been add successfully");
     }
   };
 
@@ -99,13 +99,13 @@ const VideosAdminPage = () => {
       data
     );
     if (response.status === 200) {
-      toast.success("The Video has been add successfully");
+      //toast.success("The Video has been add successfully");
     }
   };
 
 
   return (
-    <div>
+    <div className="InfosGeneral">
       <div className="ListVideo_Container">
         <table className="styled-table">
           <thead>
@@ -125,7 +125,9 @@ const VideosAdminPage = () => {
                     <td>{item.URL}</td>
                     <td>{item.Titre_video}</td>
                     <td>
-                      <button className="btn btn-edit">Modify</button>
+                      <Link to={`/UpdateWebsite/${item._id}`}>
+                        <button className="btn btn-edit">Modify</button>
+                      </Link>
                       <button
                         className="btn btn-delete"
                         onClick={() => onDeleteVideo(item._id)}
@@ -148,7 +150,7 @@ const VideosAdminPage = () => {
             alignContent: "center",
           }}
           onSubmit={handleSubmit}
-        >
+          >
           <label htmlFor="NameAnime">Anime Name</label>
           <input
             type="text"
@@ -159,7 +161,6 @@ const VideosAdminPage = () => {
             onChange={handleInputChange}
             defaultValue={NameAnime}
           />
-
           <label htmlFor="URL">URL Video</label>
           <input
             type="text"
@@ -170,7 +171,6 @@ const VideosAdminPage = () => {
             onChange={handleInputChange}
             defaultValue={URL}
           />
-
           <label htmlFor="Titre_video">Name Video</label>
           <input
             type="text"

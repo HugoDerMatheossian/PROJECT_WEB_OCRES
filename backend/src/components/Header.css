@@ -1,35 +1,76 @@
 .header{
     overflow:hidden;
     background-color: aqua;
+    display: flex;
+    flex-direction: column;
 }
 
-.header p {
-    float:left;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 15px;
-    border-radius:4px;
+.header img {
+    height: 7rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
-.header p.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #5c5239;
+.header {
+    display: flex;
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(63, 0, 113, 1);
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
-.header p:hover {
-    background-color: blue;
-    color: aliceblue;
+.header h1 {
+    color: #AAA;
+    font-size: 2rem;
+    font-weight: 1rem;
+    padding-top: 0.5rem;
 }
 
-.header p.active{
-    background-color: blueviolet;
-    color: antiquewhite;
+.header h1 strong {
+    color: #1d1c1c
 }
 
-.header-right {
-    float: right;
+.WebsiteChoice{
+    display: flex;
+    padding-right: 8.5rem;
+    border-radius: 5%;
+}
+
+.VideoChoice{
+    display: flex;
+    padding-left: 8.5rem;
+    border-radius: 5%;
+}
+
+.LogoTitle{
+    display: flex;
+}
+
+.MyTitle{
+    display: flex;
+    flex-direction: row;
+}
+
+.AdminChoice p {
+    color: white;
+    border-radius: 5%;
+    text-decoration: underline;
+}
+
+.AdminChoice p:hover{
+    color: rgb(146, 146, 146);
+}
+
+.AdminChoice p.active{
+    color:rgb(255, 77, 0);
+}
+
+.AdminChoice{
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";   // LIBRARY TO TRANSFER DATA BETWEEN PAGES
-import { toast } from 'react-toastify';   // LIBRARY TO CREATE MESSAGE POP-UP
+//import { toast } from 'react-toastify';   // LIBRARY TO CREATE MESSAGE POP-UP
 import "./WebsitesAdminPage.css";
+import "./Pages.css";
 import axios from "axios";
 
 const initialState = {
@@ -36,7 +37,7 @@ const WebsitesAdminPage = () => {
     } else {
       updateWebsite(state, id);
     }
-    getWebsites()
+    getWebsites();
   };
 
   // FONCTION : WHEN THE INPUT VALUE CHANGE
@@ -62,10 +63,10 @@ const WebsitesAdminPage = () => {
         `http://localhost:4000/api/websites/delete/${id}`
       );
       if (response.status === 200) {
-        toast.success("Website Deleted Successfully !");
+        //toast.success("Website Deleted Successfully !");
         getWebsites();
       } else {
-        toast.error("Impossible to delete the website !");
+        //toast.error("Impossible to delete the website !");
       }
     }
   };
@@ -87,7 +88,7 @@ const WebsitesAdminPage = () => {
       data
     );
     if (response.status === 200) {
-      toast.success("The Website has been add successfully");
+      //toast.success("The Website has been add successfully");
     }
   };
 
@@ -98,13 +99,13 @@ const WebsitesAdminPage = () => {
       data
     );
     if (response.status === 200) {
-      toast.success("The Website has been add successfully");
+      //toast.success("The Website has been add successfully");
     }
   };
 
   return (
-    <div>
-      <div>
+    <div className="InfosGeneral">
+      <div className="ListVideo_Container">
         <table className="styled-table">
           <thead>
             <tr>
@@ -138,7 +139,7 @@ const WebsitesAdminPage = () => {
           </tbody>
         </table>
       </div>
-      <div style={{ marginTop: "100px" }}>
+      <div className="InfoVideo_Container" style={{ marginTop: "100px" }}>
         <form
           style={{
             margin: "auto",
