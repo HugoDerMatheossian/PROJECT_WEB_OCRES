@@ -62,7 +62,7 @@ header h1 strong {
 .container {
   min-height: 30rem;
   max-height: 30rem;
-  width: 45%;
+  width: 45vw;
   margin: 1%;
   display: flex;
   border: solid;
@@ -78,7 +78,7 @@ header h1 strong {
 .container2 {
   min-height: 30rem;
   max-height: 30rem;
-  width: 45%;
+  width: 45vw;
   margin: 1%;
   display: flex;
   border: solid;
