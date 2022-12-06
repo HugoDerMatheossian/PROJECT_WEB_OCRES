@@ -37,9 +37,9 @@ export const WidgetPlaylist = () => {
                             <table className="styled-table">
                                 <thead>
                                     <tr>
-                                        <th>ANIME NAME</th>
+                                        <th>TITLE</th>
                                         <th>URL</th>
-                                        <th>VIDEO NAME</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,9 +47,9 @@ export const WidgetPlaylist = () => {
                                         data.map((item, index) => {
                                             return (
                                                 <tr key={index}>
-                                                    <td>{item.NameAnime}</td>
-                                                    <td><a href={item.URL} target={item.URL}>{item.URL}</a></td>
                                                     <td>{item.Titre_video}</td>
+                                                    <td><a href={item.URL} target={item.URL}>{item.URL}</a></td>
+
                                                 </tr>
                                             );
                                         })}
