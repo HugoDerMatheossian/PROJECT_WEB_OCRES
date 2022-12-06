@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"; // LIBRARY TO TRANSFER DATA BETWEE
 import { Link } from "react-router-dom";  // LIBRARY TO CREATE ROUTES BETWEEN PAGES
 //import { toast } from "react-toastify"; // LIBRARY TO CREATE MESSAGE POP-UP
 import axios from "axios";
-import "./VideosAdminPage.css";
+import "./Backend.css";
 
 const initialState = {
   NameAnime: "",
